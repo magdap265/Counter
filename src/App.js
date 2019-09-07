@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from './Button'
-// import './App.css';
+import './App.css';
 
 class App extends React.Component {
   state = {
@@ -22,18 +22,21 @@ class App extends React.Component {
 
   render(){
     return(
-      <div>
+      <div className="content">
         Ustaw wartość.
-
-        <Button 
-          value = {'-'}
-          click = {this.decrementValue}
-        />
-        {this.state.value}
-        <Button 
-          value = {'+'}
-          click = {this.incrementValue}
-        />
+        <div className="counter">
+          <Button 
+            value = {'-'}
+            click = {this.decrementValue}
+          />
+          <div className="value">{this.state.value}</div>
+          
+          <Button 
+            value = {'+'}
+            click = {this.incrementValue}
+          />
+        </div>
+        
       </div>
     )
   }
